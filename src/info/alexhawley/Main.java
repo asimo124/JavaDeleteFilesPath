@@ -14,6 +14,9 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
+        String defaultKeyword = "_remote.repositories";
+        String keyword = args.length > 0 ? args[0] : defaultKeyword;
+
         String mainFolderPath = "";
 
         String file = "C:\\Temp\\delete_files_path.txt";
@@ -35,7 +38,7 @@ public class Main {
                 System.out.println("filePath: " + filePath);
 
                 //*/
-                if (filePath.contains("_remote.repositories")) {
+                if (filePath.contains(keyword)) {
                     Path path = Paths.get(filePath);
                     try {
                         Files.delete(path);
